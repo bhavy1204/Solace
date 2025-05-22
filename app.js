@@ -12,13 +12,14 @@ app.set("views", path.join(__dirname, "views"));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "/public")));
 
+const journalRouter = require("/routes/journals");
 
-app.get("/journals",(req,res)=>{
-    res.send("Working");
-})
+app.get("/journals",journalRouter);
 
 app.get("/", (req, res) => {
-    res.send("Best of luck !");
+    res.send("Home Page");
 })
 
-app.listen(3000);
+app.listen(3000,()=>{
+    console.log("Port listening on 3000");
+});
