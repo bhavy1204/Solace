@@ -12,7 +12,20 @@ app.set("views", path.join(__dirname, "views"));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "/public")));
 
+const Journal = require("./models/journals.js");
+
 const journalRouter = require("./routes/journals.js");
+const { default: mongoose } = require("mongoose");
+
+main().then(()=>{
+    console.log("connected to mongo");
+}).catch(err =>{
+    console.log(err);
+})
+
+async function main(){
+    await mongoose.connect("mongodb://127.0.0.1:27017/solace");
+}
 
 app.use("/journals",journalRouter);
 
