@@ -12,9 +12,9 @@ app.set("views", path.join(__dirname, "views"));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "/public")));
 
-const journalRouter = require("/routes/journals");
+const journalRouter = require("./routes/journals.js");
 
-app.get("/journals",journalRouter);
+app.use("/journals",journalRouter);
 
 app.get("/", (req, res) => {
     res.send("Home Page");

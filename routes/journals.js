@@ -1,16 +1,20 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/success",(req,res)=>{
-    res.send("journals route is working");
+router.get("/", (req, res) => {
+    res.render("journals/home.ejs");
 });
 
-router.get("/love",(req,res)=>{
-    res.send("journals route is working, love");
+router.get("/success", (req, res) => {
+    res.render("journals/home.ejs");
 });
 
-router.get("/general",(req,res)=>{
-    res.send("journals route is working, general");
+router.get("/love", (req, res) => {
+    res.render("journals/home.ejs");
+});
+
+router.get("/general", (req, res) => {
+    res.render("journals/home.ejs");
 });
 
 module.exports = router;

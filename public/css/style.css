@@ -1,0 +1,16 @@
+
+
+.zen-icon img{
+  height: 40px;
+  animation: slow-spin 50s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes slow-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
