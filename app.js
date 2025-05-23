@@ -15,6 +15,7 @@ app.use(express.static(path.join(__dirname, "/public")));
 const Journal = require("./models/journals.js");
 
 const journalRouter = require("./routes/journals.js");
+const homeRouter = require("./routes/home.js");
 const { default: mongoose } = require("mongoose");
 
 main().then(()=>{
@@ -27,6 +28,7 @@ async function main(){
     await mongoose.connect("mongodb://127.0.0.1:27017/solace");
 }
 
+app.use("/home",homeRouter);
 app.use("/journals",journalRouter);
 
 app.get("/", (req, res) => {
