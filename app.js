@@ -13,6 +13,7 @@ app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "/public")));
 
 const Journal = require("./models/journals.js");
+const Entry = require("./models/entries.js");
 
 const journalRouter = require("./routes/journals.js");
 const homeRouter = require("./routes/home.js");
